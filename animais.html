@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>InfoPET — Animais</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="header">
+    <div class="header-inner">
+      <a href="index.html" class="logo">Info<span>PET</span></a>
+
+      <nav class="desktop-nav">
+        <a href="index.html">Início</a>
+        <a href="integrantes.html">Integrantes</a>
+        <a href="animais.html" class="partner-button">Animais</a>
+      </nav>
+
+      <button class="menu-button" aria-label="Abrir menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+
+    <nav class="mobile-nav">
+      <a href="index.html">Início</a>
+      <a href="integrantes.html">Integrantes</a>
+      <a href="animais.html">Animais</a>
+    </nav>
+  </header>
+<main>
+<section class="page-title">
+  <span>INFORMAÇÃO</span>
+  <h1>Proteção animal</h1>
+  <p>Conteúdos e informações sobre adoção responsável, conscientização e bem-estar animal.</p>
+</section>
+<section class="animals" id="animais">
+
+      <div class="animals-inner">
+
+        <div class="section-heading">
+          <span>PROTEÇÃO ANIMAL</span>
+          <h2>Informação que ajuda a transformar</h2>
+          <p>
+            Conheça iniciativas, projetos e organizações que trabalham
+            pela proteção e pelo bem-estar dos animais.
+          </p>
+        </div>
+
+        <div class="animal-grid">
+
+          <article class="animal-card">
+            <div class="animal-image">
+              <img src="img/adopt.png" alt="vacinar">
+
+            </div>
+            <h3>Adoção responsável</h3>
+            <p>Informações sobre adoção e cuidados com animais.</p>
+            <button class="more-button"
+                    data-text="colocar informações completas sobre adoção responsável.">
+              Saiba mais
+            </button>
+          </article>
+
+          <article class="animal-card">
+            <div class="animal-image">
+              <img src="img/adotar.png" alt="vacinar">
+
+            </div>
+            <h3>ONGs parceiras</h3>
+            <p>Conheça as organizações participantes do projeto.</p>
+            <button class="more-button"
+                    data-text="apresentar as ONGs parceiras, seus projetos e seus contatos.">
+              Saiba mais
+            </button>
+          </article>
+
+          <article class="animal-card">
+            <div class="animal-image">
+              <img src="img/petvac.png" alt="vacinar">
+
+            </div>
+            <h3>Conscientização</h3>
+            <p>Conteúdos educativos sobre proteção animal.</p>
+            <button class="more-button"
+                    data-text="colocar campanhas, textos e materiais educativos.">
+              Saiba mais
+            </button>
+          </article>
+
+        </div>
+
+      </div>
+
+    </section>
+</main>
+<footer>
+    <div class="footer-inner">
+      <strong>Info<span>PET</span></strong>
+      <p>Projeto de conscientização e proteção animal.</p>
+    </div>
+  </footer>
+<div class="modal" aria-hidden="true">
+    <div class="modal-box">
+      <button class="modal-close" aria-label="Fechar">×</button>
+      <p class="modal-text"></p>
+    </div>
+  </div>
+<script src="script.js"></script>
+</body>
+</html>

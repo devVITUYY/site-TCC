@@ -1,0 +1,997 @@
+
+
+
+
+/* =========================================================
+   RESET / BASE
+========================================================= */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+:root {
+  --blue: #071475;
+  --blue-dark: #040c58;
+  --blue-soft: #111f91;
+  --orange: #ff7517;
+  --orange-dark: #df5b06;
+  --gray: #5c5c5c;
+  --placeholder: #ffffff;
+  --background: #f5f6fa;
+  --white: #ffffff;
+  --text: #222a42;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  color: var(--text);
+  background: var(--background);
+}
+
+a {
+  text-decoration: none;
+}
+
+button {
+  font-family: inherit;
+}
+
+
+/* =========================================================
+   HEADER
+========================================================= */
+
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  background: var(--blue);
+  box-shadow: 0 3px 12px rgba(0, 0, 0, .15);
+}
+
+.header-inner {
+  width: min(100%, 1200px);
+  height: 64px;
+  margin: auto;
+  padding: 0 28px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.logo {
+  color: var(--white);
+  font-size: 25px;
+  font-weight: 900;
+  letter-spacing: -1.5px;
+}
+
+.logo span {
+  color: var(--orange);
+}
+
+.desktop-nav {
+  display: flex;
+  align-items: center;
+  gap: 25px;
+}
+
+.desktop-nav a {
+  color: white;
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.partner-button {
+  background: var(--orange);
+  padding: 11px 16px;
+  border-radius: 5px;
+}
+
+.menu-button,
+.mobile-nav {
+  display: none;
+}
+
+
+/* =========================================================
+   HOME
+   Estrutura baseada diretamente na segunda imagem:
+   - barra azul
+   - laterais cinzas
+   - imagem da equipe grande e centralizada
+========================================================= */
+
+.home {
+  position: relative;
+  background: var(--white);
+  min-height: 390px;
+  overflow: hidden;
+}
+
+.home-blue-bar {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 57px;
+  background: var(--blue);
+}
+
+.home-content {
+  position: relative;
+  z-index: 2;
+
+  width: min(100%, 1150px);
+  min-height: 390px;
+  margin: auto;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
+/* Imagens laterais */
+
+.side-image {
+  width: 31%;
+  height: 205px;
+  background: var(--gray);
+  border-radius: 18px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  color: white;
+  text-align: center;
+  font-weight: 700;
+  
+}
+.side-image img {
+  width: 100%;
+  height: 205px;
+  object-fit: fill;
+  display: block;
+  border-radius: 18px;
+}
+
+.side-left {
+  margin-right: -42px;
+  
+}
+
+.side-right {
+  margin-left: -42px;
+}
+
+
+/* Imagem central */
+
+.team-image {
+  width: 100%;
+  max-width: 700px;
+  height: 385px;
+
+  position: relative;
+  z-index: 5;
+  border-radius: 18px;
+  flex-shrink: 0;
+}
+
+.team-image img {
+  width: 100%;
+  height: 385;
+  object-fit: fill;
+  display: block;
+  border-radius: 18px;
+}
+
+
+.team-image .image-placeholder {
+  height: 100%;
+  border-radius: 18px;
+}
+
+
+/* Placeholder geral */
+
+.image-placeholder {
+  width: 100%;
+  height: 100%;
+  background: var(--placeholder);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  color: white;
+  text-align: center;
+  font-size: 18px;
+  font-weight: 700;
+  border-radius: 18px;
+}
+
+
+/* =========================================================
+   SEÇÃO DOS INTEGRANTES
+   Fundo branco + cartões azul-marinho
+========================================================= */
+
+.members {
+  background: var(--white);
+  padding: 48px 0 80px;
+}
+
+.member-container {
+  width: min(100% - 60px, 800px);
+  margin: auto;
+  
+}
+
+
+/* Cartão */
+
+.member-card {
+  min-height: 180px;
+
+  display: grid;
+  grid-template-columns: 180px 1fr;
+  align-items: center;
+
+  background: var(--blue);
+  border-radius: 21px;
+
+  position: relative;
+  overflow: visible;
+
+  margin-bottom: 72px;
+}
+
+
+/* Segundo cartão é invertido */
+
+.member-two {
+  grid-template-columns: 1fr 180px;
+  align-items: left;
+}
+
+
+/* Imagem do integrante */
+
+.member-image {
+  
+  width: 150px;
+  height: 150px;
+  border-radius: 18px;
+  overflow: hidden;
+  position: relative;
+  z-index: 3;
+  flex-shrink: 0;
+  margin-left: 20px;
+}
+
+.member-image img {
+  width: 150px;
+  height: 150px;
+  object-fit: fill;
+  display: block;
+}
+
+.member-two .member-image {
+  grid-column: 2;
+  grid-row: 1;
+
+  margin-left: 0;
+  margin-right: 20px;
+}
+
+
+/* Texto */
+
+.member-info {
+  color: white;
+  padding: 23px 28px 23px 5px;
+}
+
+.member-two .member-info {
+  padding-left: 28px;
+  padding-right: 5px;
+}
+
+.member-info h2 {
+  font-size: 24px;
+  margin-bottom: 7px;
+}
+
+.member-info p {
+  font-size: 14px;
+  line-height: 1.42;
+  color: #f0f2ff;
+  text-align: justify; 
+  max-width: 700px;
+
+  margin-bottom: 5px;
+}
+
+
+/* =========================================================
+   SEÇÃO ONGS
+   Fundo laranja
+========================================================= */
+
+.ongs {
+  background: var(--orange);
+  padding: 65px 0 80px;
+}
+
+.ong-container {
+  width: min(100% - 60px, 1080px);
+  margin: auto;
+}
+
+.ong-card {
+  min-height: 180px;
+
+  display: grid;
+  grid-template-columns: 180px 1fr;
+  align-items: center;
+
+  background: var(--white);
+  border-radius: 21px;
+
+  margin-bottom: 72px;
+}
+
+.ong-two {
+  grid-template-columns: 1fr 180px;
+}
+
+
+/* Imagens ONG */
+
+.ong-image {
+  width: 155px;
+  height: 150px;
+
+  margin-left: 20px;
+
+  border-radius: 18px;
+  overflow: hidden;
+}
+
+.ong-two .ong-image {
+  margin-left: 0;
+  margin-right: 20px;
+}
+
+
+/* Texto ONG */
+
+.ong-info {
+  padding: 25px 30px 25px 5px;
+}
+
+.ong-two .ong-info {
+  padding-left: 30px;
+  padding-right: 5px;
+}
+
+.ong-info h2 {
+  color: var(--orange-dark);
+  font-size: 19px;
+  margin-bottom: 7px;
+}
+
+.ong-info p {
+  color: #555d70;
+  font-size: 11px;
+  line-height: 1.45;
+  max-width: 700px;
+}
+
+
+/* =========================================================
+   ANIMAIS
+========================================================= */
+
+.animals {
+  background: var(--white);
+  padding: 80px 0;
+}
+
+.animals-inner {
+  width: min(100% - 60px, 1080px);
+  margin: auto;
+}
+
+.section-heading {
+  max-width: 650px;
+  margin: 0 auto 42px;
+  text-align: center;
+}
+
+.section-heading span {
+  color: var(--orange);
+  font-size: 12px;
+  font-weight: 900;
+  letter-spacing: 2px;
+}
+
+.section-heading h2 {
+  color: var(--blue);
+  font-size: 31px;
+  margin: 8px 0;
+}
+
+.section-heading p {
+  color: #687086;
+  font-size: 15px;
+}
+
+.animal-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 22px;
+}
+
+.animal-card {
+  
+  padding: 17px;
+
+  border: 1px solid #e2e5ee;
+  border-radius: 14px;
+
+  background: white;
+
+  box-shadow: 0 8px 20px rgba(7, 20, 117, .06);
+
+  transition: transform .2s ease;
+}
+
+.animal-card:hover {
+  transform: translateY(-5px);
+}
+
+.animal-image {
+    width: 250px;
+    height: 150px;
+    border-radius: 9px;
+    overflow: hidden;
+    position: relative;
+    flex-shrink: 0;
+    margin-left: 20px;
+    margin-bottom: 16px;
+}
+
+.animal-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: fill;
+    display: block;
+}
+
+
+
+.animal-card h3 {
+  color: var(--blue);
+  margin-bottom: 6px;
+}
+
+.animal-card p {
+  color: #687086;
+  font-size: 14px;
+  margin-bottom: 15px;
+}
+
+.more-button {
+  border: 0;
+  background: var(--orange);
+  color: white;
+
+  padding: 9px 14px;
+  border-radius: 6px;
+
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.more-button:hover {
+  background: var(--orange-dark);
+}
+
+
+/* =========================================================
+   FOOTER
+========================================================= */
+
+footer {
+  background: var(--blue-dark);
+  color: white;
+  padding: 25px 0;
+}
+
+.footer-inner {
+  width: min(100% - 60px, 1080px);
+  margin: auto;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  font-size: 13px;
+}
+
+.footer-inner strong {
+  font-size: 18px;
+}
+
+.footer-inner strong span {
+  color: var(--orange);
+}
+
+
+/* =========================================================
+   MODAL
+========================================================= */
+
+.modal {
+  display: none;
+
+  position: fixed;
+  inset: 0;
+
+  z-index: 100;
+
+  background: rgba(0, 0, 0, .55);
+
+  align-items: center;
+  justify-content: center;
+
+  padding: 20px;
+}
+
+.modal.active {
+  display: flex;
+}
+
+.modal-box {
+  width: min(100%, 450px);
+
+  background: white;
+  border-radius: 15px;
+
+  padding: 35px;
+
+  position: relative;
+
+  box-shadow: 0 20px 50px rgba(0, 0, 0, .25);
+}
+
+.modal-close {
+  position: absolute;
+  top: 8px;
+  right: 13px;
+
+  background: transparent;
+  border: 0;
+
+  font-size: 30px;
+  color: #555;
+
+  cursor: pointer;
+}
+
+
+/* =========================================================
+   RESPONSIVIDADE
+========================================================= */
+
+@media (max-width: 800px) {
+
+  .desktop-nav {
+    display: none;
+  }
+
+  .menu-button {
+    display: flex;
+
+    width: 40px;
+    height: 40px;
+
+    background: transparent;
+    border: 0;
+
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    cursor: pointer;
+  }
+
+  .menu-button span {
+    width: 25px;
+    height: 3px;
+    background: white;
+    border-radius: 3px;
+    margin: 2.5px;
+  }
+
+  .mobile-nav {
+    display: none;
+
+    background: var(--blue);
+
+    padding: 10px 25px 20px;
+
+    flex-direction: column;
+    gap: 14px;
+  }
+
+  .mobile-nav.open {
+    display: flex;
+  }
+
+  .mobile-nav a {
+    color: white;
+    font-weight: 700;
+    padding: 8px 0;
+  }
+
+  /* HOME MOBILE */
+
+  .home {
+    min-height: 310px;
+  }
+
+  .home-content {
+    min-height: 310px;
+    padding: 45px 15px 25px;
+  }
+
+  .side-image {
+    display: none;
+  }
+
+  .team-image {
+    width: 100%;
+    max-width: 550px;
+    height: 230px;
+  }
+
+
+  /* INTEGRANTES MOBILE */
+
+  .member-container,
+  .ong-container,
+  .animals-inner {
+    width: min(100% - 30px, 600px);
+  }
+
+  .member-card,
+  .member-two,
+  .ong-card,
+  .ong-two {
+    display: flex;
+    flex-direction: column;
+
+    padding: 15px;
+
+    margin-bottom: 45px;
+  }
+
+  .member-image,
+  .member-two .member-image,
+  .ong-image,
+  .ong-two .ong-image {
+    width: 100%;
+    height: 170px;
+
+    margin: 0 0 15px;
+  }
+
+  .member-info,
+  .member-two .member-info,
+  .ong-info,
+  .ong-two .ong-info {
+    padding: 5px 8px 12px;
+  }
+
+  .member-info p,
+  .ong-info p {
+    font-size: 12px;
+  }
+
+
+  /* ANIMAIS MOBILE */
+
+  .animal-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .section-heading h2 {
+    font-size: 26px;
+  }
+
+
+  /* FOOTER MOBILE */
+
+  .footer-inner {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+  }
+}
+
+
+@media (max-width: 430px) {
+
+  .header-inner {
+    padding: 0 17px;
+  }
+
+  .home-content {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+
+  .team-image {
+    height: 210px;
+  }
+
+  .members,
+  .ongs,
+  .animals {
+    padding-top: 45px;
+    padding-bottom: 50px;
+  }
+}
+
+
+/* ================= PÁGINAS SEPARADAS ================= */
+
+.page-title {
+  background: var(--blue);
+  color: white;
+  padding: 55px 20px;
+  text-align: center;
+}
+
+.page-title span {
+  display: block;
+  color: var(--orange);
+  font-size: 12px;
+  font-weight: 900;
+  letter-spacing: 2px;
+  margin-bottom: 8px;
+}
+
+.page-title h1 {
+  font-size: 34px;
+}
+
+.page-title p {
+  max-width: 650px;
+  margin: 12px auto 0;
+  color: #f0f2ff;
+  line-height: 1.5;
+}
+
+@media (max-width: 600px) {
+  .page-title {
+    padding: 42px 18px;
+  }
+
+  .page-title h1 {
+    font-size: 28px;
+  }
+}
+
+
+/* ================================
+   APRESENTAÇÃO DO PROJETO
+================================ */
+
+.about-project {
+  width: 100%;
+  padding: 70px 20px;
+  background: #f7f9fc;
+}
+
+.about-content {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.about-content h1 {
+  margin-bottom: 30px;
+  font-size: 36px;
+  text-align: center;
+}
+
+.about-content p {
+  margin-bottom: 20px;
+  font-size: 17px;
+  line-height: 1.8;
+  text-align: justify;
+}
+
+.project-highlight {
+  margin-top: 45px;
+  padding: 30px;
+  border-radius: 18px;
+  background: white;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+}
+
+.project-highlight h2 {
+  margin-bottom: 15px;
+  font-size: 27px;
+}
+
+.project-highlight p {
+  margin-bottom: 0;
+}
+
+
+/* =========================================
+   SOBRE O PROJETO
+========================================= */
+
+.project-info {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 75px 25px;
+  background: var(--background);
+}
+
+.project-info-header {
+  max-width: 850px;
+  margin: 0 auto 45px;
+  text-align: center;
+}
+
+.project-info-header h1 {
+  margin: 0 0 12px;
+  color: var(--blue);
+  font-size: 36px;
+  font-weight: 700;
+}
+
+.project-info-header p {
+  margin: 0;
+  color: var(--gray);
+  font-size: 17px;
+  line-height: 1.6;
+}
+
+
+/* =========================================
+   CARDS
+========================================= */
+
+.info-cards {
+  width: 100%;
+  max-width: 850px;
+  margin: 0 auto;
+
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+}
+
+.info-card {
+  position: relative;
+
+  display: flex;
+  width: 100%;
+  min-height: 125px;
+
+  box-sizing: border-box;
+
+  background: var(--white);
+
+  border-radius: 15px;
+
+  overflow: hidden;
+
+  box-shadow: 0 5px 18px rgba(4, 12, 88, 0.08);
+
+  transition: transform 0.2s ease,
+              box-shadow 0.2s ease;
+}
+
+
+/* Barra laranja lateral */
+
+.card-line {
+  width: 7px;
+  min-width: 7px;
+
+  background: var(--orange);
+}
+
+
+/* Conteúdo */
+
+.card-content {
+  padding: 25px 30px;
+}
+
+.card-content h2 {
+  margin: 0 0 8px;
+
+  color: var(--blue);
+
+  font-size: 22px;
+  font-weight: 700;
+
+  text-transform: uppercase;
+}
+
+.card-content p {
+  margin: 0;
+
+  color: var(--gray);
+
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+
+/* Efeito ao passar o mouse */
+
+.info-card:hover {
+  transform: translateX(5px);
+
+  box-shadow: 0 8px 25px rgba(4, 12, 88, 0.14);
+}
+
+
+
+
+
+/* =========================================
+   CELULAR
+========================================= */
+
+@media (max-width: 700px) {
+
+  .project-info {
+    padding: 55px 18px;
+  }
+
+  .project-info-header {
+    margin-bottom: 35px;
+  }
+
+  .project-info-header h1 {
+    font-size: 30px;
+  }
+
+  .project-info-header p {
+    font-size: 16px;
+  }
+
+  .card-content {
+    padding: 22px;
+  }
+
+  .card-content h2 {
+    font-size: 19px;
+  }
+
+  .card-content p {
+    font-size: 15px;
+  }
+
+}
