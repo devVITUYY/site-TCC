@@ -1087,56 +1087,170 @@ footer {
   font-size: 13px;
 }
 
-/* DENÚNCIA ONLINE */
+
+/* =========================================
+   DISQUE 190 - INFO PET
+========================================= */
+
+.denuncia-section {
+    display: block;
+    width: 100%;
+    max-width: 100%;
+    padding: 65px 20px;
+    margin: 0;
+    box-sizing: border-box;
+    background-color: #040c58;
+    overflow: hidden;
+}
+
+.denuncia-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    width: 100%;
+    max-width: 750px;
+    margin: 0 auto;
+    padding: 0;
+
+    box-sizing: border-box;
+    text-align: center;
+    color: #ffffff;
+}
+
+.denuncia-icon {
+    width: 55px;
+    height: 55px;
+    margin-bottom: 20px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border: 2px solid #ff7517;
+    border-radius: 50%;
+
+    color: #ff7517;
+    font-size: 32px;
+    font-weight: bold;
+}
+
+.denuncia-content h2 {
+    width: 100%;
+    margin: 0 0 15px;
+
+    color: #ffffff;
+    font-size: 32px;
+    text-align: center;
+}
+
+.denuncia-content > p {
+    width: 100%;
+    max-width: 580px;
+    margin: 0 auto 30px;
+
+    color: #e0e3f5;
+    font-size: 16px;
+    line-height: 1.7;
+    text-align: center;
+}
+
+.denuncia-button {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    width: 190px;
+    min-height: 120px;
+    padding: 15px;
+    margin: 0 auto;
+
+    box-sizing: border-box;
+    background: #ff7517;
+    color: #ffffff;
+
+    border-radius: 15px;
+    text-decoration: none;
+    transition: 0.2s ease;
+}
+
+.denuncia-button span {
+    color: #ffffff;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.denuncia-button strong {
+    color: #ffffff;
+    font-size: 48px;
+    line-height: 1.2;
+}
+
+.denuncia-button small {
+    color: #ffffff;
+    font-size: 13px;
+}
+
+.denuncia-button:hover {
+    background: #df5b06;
+    transform: translateY(-3px);
+}
 
 .denuncia-extra {
-  margin-top: 45px;
-  padding-top: 25px;
+    width: 100%;
+    margin-top: 40px;
+    padding-top: 25px;
 
-  border-top: 1px solid rgba(255,255,255,0.2);
+    box-sizing: border-box;
+    border-top: 1px solid rgba(255,255,255,0.2);
 }
 
 .denuncia-extra h3 {
-  margin-bottom: 10px;
-  font-size: 20px;
+    margin-bottom: 10px;
+    color: #ffffff;
+    font-size: 20px;
 }
 
 .denuncia-extra p {
-  color: #e0e3f5;
-  line-height: 1.6;
+    color: #e0e3f5;
+    font-size: 15px;
+    line-height: 1.6;
 }
 
 .denuncia-extra a {
-  display: inline-block;
-  margin-top: 10px;
+    display: inline-block;
+    margin-top: 12px;
 
-  color: var(--orange);
-  font-weight: bold;
-  text-decoration: none;
+    color: #ff7517;
+    font-weight: bold;
+    text-decoration: none;
 }
 
-.denuncia-extra a:hover {
-  text-decoration: underline;
-}
-
-/* RESPONSIVIDADE */
+/* CELULAR */
 
 @media (max-width: 600px) {
 
-  .denuncia-section {
-    padding: 55px 20px;
-  }
+    .denuncia-section {
+        padding: 45px 20px;
+    }
 
-  .denuncia-content h2 {
-    font-size: 26px;
-  }
+    .denuncia-content {
+        width: 100%;
+        max-width: 100%;
+    }
 
-  .denuncia-content > p {
-    font-size: 15px;
-  }
+    .denuncia-content h2 {
+        font-size: 25px;
+        overflow-wrap: break-word;
+    }
 
-  .denuncia-extra h3 {
-    font-size: 19px;
-  }
+    .denuncia-content > p {
+        font-size: 15px;
+    }
+
+    .denuncia-extra h3 {
+        font-size: 19px;
+    }
 
 }
